@@ -133,10 +133,35 @@ func init() {
 		Run: func(c *grumble.Context) error {
 			consensus := c.Flags.String("consensus")
 			if consensus != "dpos" {
-				c.App.Println("vote cmd only support simulate with consensus is ", consensus)
+				c.App.Println("vote cmd only support dpos consensus, but current is ", consensus)
 				return nil
 			}
 
+			id := c.Args.String("id")
+			ticket := c.Args.Int("ticket")
+
+			vote(c, id, ticket)
+
+			return nil
+		},
+	}
+
+	voteResetCmd := &grumble.Command{
+		Name:    "vote-reset",
+		Help:    "vote reset cmd for dpos consensus algorithrm",
+		Aliases: []string{"run"},
+		Flags: func(f *grumble.Flags) {
+		},
+		Args: func(a *grumble.Args) {
+		},
+		Run: func(c *grumble.Context) error {
+			consensus := c.Flags.String("consensus")
+			if consensus != "dpos" {
+				c.App.Println("vote reset cmd only support dpos consensus, but current is ", consensus)
+				return nil
+			}
+
+			voteReset()
 			return nil
 		},
 	}
@@ -146,6 +171,7 @@ func init() {
 	Cli.AddCommand(readCmd)
 	Cli.AddCommand(writeCmd)
 	Cli.AddCommand(voteCmd)
+	Cli.AddCommand(voteResetCmd)
 }
 
 func setLogLevel(logLevel string) {
@@ -221,18 +247,30 @@ func sim(c *grumble.Context, nodes int, rounds int) {
 	port := 3000
 	addr := ""
 	fullAddr := ""
+	var err error
 	seed := int64(0)
 
 	for node := 1; node <= nodes; node++ {
 		log.Infof("create node: %d", node)
 
 		if node == 1 {
-			addr, fullAddr, _ = blockchain.CreateNode(port, "", seed)
+			addr, fullAddr, err = blockchain.CreateNode(port, "", seed)
+			if err != nil {
+				log.Errorf("failed to create node: %d, error is %s", node, err)
+				c.App.Println("failed to create node: ", addr)
+				break
+			}
 		} else {
-			addr, fullAddr, _ = blockchain.CreateNode(port, fullAddr, seed)
+			addr, fullAddr, err = blockchain.CreateNode(port, fullAddr, seed)
+			if err != nil {
+				log.Errorf("failed to create node: %d, error is %s", node, err)
+				c.App.Println("failed to create node: ", addr)
+				break
+			}
 		}
 
 		c.App.Println("success create node id = ", addr)
+		blockchain.InitVote(addr)
 
 		port++
 	}
@@ -265,4 +303,15 @@ func show(c *grumble.Context, detail bool) {
 			c.App.Println("data: ", blockchain.ReadData(node))
 		}
 	}
+}
+
+func vote(c *grumble.Context, id string, ticket int) {
+	err := blockchain.Vote(id, ticket)
+	if err != nil {
+		c.App.Println("vote error ", err.Error())
+	}
+}
+
+func voteReset() {
+	blockchain.ResetVote()
 }

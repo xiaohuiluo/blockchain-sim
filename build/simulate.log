@@ -1,0 +1,31 @@
+2021/04/26 22:13:06  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:201: 初始化高斯分布
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:211: 初始化 node = 1 高斯分布
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: 元素值：111
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: 元素值：101
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:221: node= 1, all rounds 平均值106
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:211: 初始化 node = 2 高斯分布
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: 元素值：98
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: 元素值：73
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:221: node= 2, all rounds 平均值85
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:211: 初始化 node = 3 高斯分布
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: 元素值：83
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: 元素值：101
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:221: node= 3, all rounds 平均值92
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:233: round=1, sum=292
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:233: round=2, sum=275
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:242: node=1, round=1, weight=0.380137
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:242: node=1, round=2, weight=0.367273
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:242: node=2, round=1, weight=0.335616
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:242: node=2, round=2, weight=0.265455
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:242: node=3, round=1, weight=0.284247
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:242: node=3, round=2, weight=0.367273
+2021/04/26 22:13:06  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: create 3 nodes
+2021/04/26 22:13:06  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:254: create node: 1
+2021/04/26 22:13:06  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:222: Create Node: port=3000, target=, seed=0
+2021/04/26 22:13:06  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:92: create node: QmefhKbNA6M4yLmZ6UbvUrpSp9k6ra8KZxQu3zgyHda6xF
+2021/04/26 22:13:06  DEBUG /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:243: 等待节点连接...
+2021/04/26 22:13:06  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/vote.go:26: init vote for node id = QmefhKbNA6M4yLmZ6UbvUrpSp9k6ra8KZxQu3zgyHda6xF, ticket = 10
+2021/04/26 22:13:08  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:254: create node: 2
+2021/04/26 22:13:08  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:222: Create Node: port=3001, target=/ip4/127.0.0.1/tcp/3000/p2p/QmefhKbNA6M4yLmZ6UbvUrpSp9k6ra8KZxQu3zgyHda6xF, seed=0
+2021/04/26 22:13:08  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:92: create node: QmULQPHknJT5HVDykWZCcLwrfnKzfYk2DB2H4qBMCWqr1m
+2021/04/26 22:14:08  ERROR /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:266: failed to create node: 2, error is context deadline exceeded

@@ -12,8 +12,6 @@ import (
 	"fmt"
 	"io"
 	mrand "math/rand"
-	"os"
-	"strconv"
 	"sync"
 	"time"
 
@@ -28,20 +26,20 @@ import (
 	ma "github.com/multiformats/go-multiaddr"
 )
 
-const (
-	// DefaultVote 节点默认的票数
-	DefaultVote = 10
-	// FileName 节点信息保存配置文件
-	FileName = "config.ini"
-)
+// const (
+// 	// DefaultVote 节点默认的票数
+// 	DefaultVote = 10
+// 	// FileName 节点信息保存配置文件
+// 	FileName = "config.ini"
+// )
 
 var mutex = &sync.Mutex{}
 
 //Validator 定义节点信息
-type Validator struct {
-	name string
-	vote int
-}
+// type Validator struct {
+// 	name string
+// 	vote int
+// }
 
 var consensus string
 
@@ -92,7 +90,6 @@ func MakeBasicHost(listenPort int, secio bool, randseed int64) (host.Host, strin
 	currentFullAddr = fullAddr.String()
 
 	log.Infof("create node: %s\n", currentAddr)
-	SavePeer(currentAddr)
 
 	return basicHost, currentAddr, currentFullAddr, nil
 }
@@ -284,17 +281,4 @@ func CreateNode(port int, target string, seed int64) (string, string, error) {
 
 		return currentAddr, currentFullAddr, err
 	}
-}
-
-// SavePeer 将加入到网络中的节点信息保存到配置文件中，方便后续投票与选择
-func SavePeer(name string) {
-	vote := DefaultVote // 默认的投票数目
-	f, err := os.OpenFile(FileName, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0666)
-	if err != nil {
-		log.Errorf(err.Error())
-	}
-	defer f.Close()
-
-	f.WriteString(name + ":" + strconv.Itoa(vote) + "\n")
-
 }

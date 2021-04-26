@@ -3,6 +3,7 @@ module github.com/xiaohuiluo/blockchain-sim
 go 1.13
 
 require (
+	github.com/btcsuite/btcd v0.20.1-beta // indirect
 	github.com/davecgh/go-spew v1.1.1
 	github.com/desertbit/grumble v1.1.1
 	github.com/go-fastlog/fastlog v0.0.0-20181211062326-de7e639238fd

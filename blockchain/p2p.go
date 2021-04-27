@@ -26,20 +26,7 @@ import (
 	ma "github.com/multiformats/go-multiaddr"
 )
 
-// const (
-// 	// DefaultVote 节点默认的票数
-// 	DefaultVote = 10
-// 	// FileName 节点信息保存配置文件
-// 	FileName = "config.ini"
-// )
-
 var mutex = &sync.Mutex{}
-
-//Validator 定义节点信息
-// type Validator struct {
-// 	name string
-// 	vote int
-// }
 
 var consensus string
 
@@ -174,7 +161,7 @@ func WriteData(id string, data int) (bool, error) {
 
 	// pick选择block生产者
 	address := PickWinner()
-	log.Infof("******节点 %s 获得了记账权利******", address)
+	log.Infof("******node %s win and create new block******", address)
 	lastBlock := BlockChain[len(BlockChain)-1]
 	newBlock, err := GenerateBlock(lastBlock, data, address)
 	if err != nil {

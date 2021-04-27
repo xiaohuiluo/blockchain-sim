@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"math"
+	"math/rand"
 	"time"
 
 	"github.com/desertbit/grumble"
@@ -42,7 +44,7 @@ func init() {
 			rounds := c.Args.Int("rounds")
 
 			c.App.Println("simulate with consensus: ", consensus, " nodes: ", nodes, " rounds: ", rounds)
-			sim(c, nodes, rounds)
+			simulate(c, consensus, nodes, rounds)
 
 			return nil
 		},
@@ -120,58 +122,10 @@ func init() {
 		},
 	}
 
-	voteCmd := &grumble.Command{
-		Name:    "vote",
-		Help:    "vote cmd for dpos consensus algorithrm",
-		Aliases: []string{"run"},
-		Flags: func(f *grumble.Flags) {
-		},
-		Args: func(a *grumble.Args) {
-			a.String("id", "id of blockchain node")
-			a.Int("ticket", "ticket value you want to vote")
-		},
-		Run: func(c *grumble.Context) error {
-			consensus := c.Flags.String("consensus")
-			if consensus != "dpos" {
-				c.App.Println("vote cmd only support dpos consensus, but current is ", consensus)
-				return nil
-			}
-
-			id := c.Args.String("id")
-			ticket := c.Args.Int("ticket")
-
-			vote(c, id, ticket)
-
-			return nil
-		},
-	}
-
-	voteResetCmd := &grumble.Command{
-		Name:    "vote-reset",
-		Help:    "vote reset cmd for dpos consensus algorithrm",
-		Aliases: []string{"run"},
-		Flags: func(f *grumble.Flags) {
-		},
-		Args: func(a *grumble.Args) {
-		},
-		Run: func(c *grumble.Context) error {
-			consensus := c.Flags.String("consensus")
-			if consensus != "dpos" {
-				c.App.Println("vote reset cmd only support dpos consensus, but current is ", consensus)
-				return nil
-			}
-
-			voteReset()
-			return nil
-		},
-	}
-
 	Cli.AddCommand(simCmd)
 	Cli.AddCommand(showCmd)
 	Cli.AddCommand(readCmd)
 	Cli.AddCommand(writeCmd)
-	Cli.AddCommand(voteCmd)
-	Cli.AddCommand(voteResetCmd)
 }
 
 func setLogLevel(logLevel string) {
@@ -188,59 +142,14 @@ func setLogLevel(logLevel string) {
 	}
 }
 
-func sim(c *grumble.Context, nodes int, rounds int) {
+func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 
 	if nodes < 1 {
-		log.Errorf("最小节点数为1")
+		log.Errorf("the min of nodes is 1")
 	}
 
 	if rounds < 1 {
-		log.Errorf("最小模拟周期数为1")
-	}
-
-	log.Info("初始化高斯分布")
-	dist := distuv.Normal{
-		Mu:    100, // Mean of the normal distribution
-		Sigma: 20,  // Standard deviation of the normal distribution
-	}
-
-	var sum_c int64 = 0
-	data := make([][]int64, nodes)
-	for i := 0; i < nodes; i++ {
-		data[i] = make([]int64, rounds)
-		log.Debugf("初始化 node = %d 高斯分布", i+1)
-
-		sum_c = 0
-		for j := 0; j < rounds; j++ {
-			// Generate some random numbers from standard normal distribution
-			data[i][j] = int64(dist.Rand())
-			sum_c += data[i][j]
-			log.Debugf("元素值：%d", data[i][j])
-		}
-
-		log.Debugf("node= %d, all rounds 平均值%d", i+1, sum_c/int64(len(data[i])))
-	}
-
-	sum_round := make([]int64, rounds)
-
-	for i := 0; i < rounds; i++ {
-
-		sum_round[i] = 0
-		for j := 0; j < nodes; j++ {
-			sum_round[i] += data[j][i]
-		}
-
-		log.Debugf("round=%d, sum=%d", i+1, sum_round[i])
-	}
-
-	weight := make([][]float64, nodes)
-
-	for i := 0; i < nodes; i++ {
-		for j := 0; j < rounds; j++ {
-			weight[i] = make([]float64, rounds)
-			weight[i][j] = float64(data[i][j]) / float64(sum_round[j])
-			log.Debugf("node=%d, round=%d, weight=%f", i+1, j+1, weight[i][j])
-		}
+		log.Errorf("the min of rounds is 1")
 	}
 
 	log.Infof("create %d nodes", nodes)
@@ -270,17 +179,84 @@ func sim(c *grumble.Context, nodes int, rounds int) {
 		}
 
 		c.App.Println("success create node id = ", addr)
-		blockchain.InitVote(addr)
 
 		port++
 	}
 
-	// for round := 1; round <= rounds; round++ {
-	// 	log.Infof("round: %d", round)
+	for round := 1; round <= rounds; round++ {
+		log.Infof("round: %d", round)
+		switch consensus {
+		case "dpos":
+			log.Info("---------------------------------------------------------")
+			log.Info("Start block chain simulate with dpos consensus algorithm")
+			log.Info("init tocken normal distribution")
 
-	// 	time.Sleep(time.Duration(2) * time.Second)
+			nodeIds := blockchain.GetNodes()
+			tockensData := generateNormalDistribution(100, 20, nodes)
+			var sum int64
+			for _, value := range tockensData {
+				sum += value
+			}
 
-	// }
+			log.Info("compute vote weight")
+			weight := make([]float64, nodes)
+			for i, value := range tockensData {
+				weight[i] = float64(value) / float64(sum)
+				log.Infof("node id=%s, tockens=%d, vote weight=%f", nodeIds[i], value, weight[i])
+			}
+
+			log.Info("init vote normal distribution and compute read vote data")
+			voteNormalData := generateNormalDistribution(100, 10, nodes)
+			voteData := make([]int, nodes)
+			for i, value := range voteNormalData {
+				voteData[i] = int(math.Floor(float64(value) * weight[i]))
+			}
+
+			// init real node vote data
+			for i, nodeId := range nodeIds {
+				blockchain.Vote(nodeId, voteData[i])
+				log.Infof("node id=%s, vote=%d", nodeId, voteData[i])
+			}
+
+			c.App.Println("start random read and write to block chain")
+			it := 0
+			for it < 10 {
+				// read block chain
+				log.Info("*****************************************************")
+				randNodeId := nodeIds[randInt(0, len(nodeIds)-1)]
+				data := blockchain.ReadData(randNodeId)
+
+				c.App.Println("read success from node=", randNodeId)
+				log.Infof("read node=%s, data=%s", randNodeId, data)
+
+				time.Sleep(time.Duration(1) * time.Second)
+				// new block chain
+				randData := randInt(10, 100)
+				randNodeId = nodeIds[randInt(0, len(nodeIds)-1)]
+				rlt, err := blockchain.WriteData(randNodeId, randData)
+				if rlt {
+					log.Infof("write by node=%s, data=%d", randNodeId, randData)
+					c.App.Println("write success from node=", randNodeId, ", data=", randData)
+				} else {
+					log.Infof("write error by node=%s, data=%s, error=%s", randNodeId, randData, err.Error())
+					c.App.Println("write failed from node=", randNodeId, ", data=", randData, ", error=", err.Error())
+				}
+
+				it++
+				log.Info("*****************************************************")
+			}
+
+			c.App.Println("end random read and write to block chain")
+			log.Info("End block chain simulate with dpos consensus algorithm")
+			log.Info("---------------------------------------------------------")
+		case "pos":
+		default:
+
+		}
+
+		time.Sleep(time.Duration(2) * time.Second)
+
+	}
 
 }
 
@@ -301,17 +277,28 @@ func show(c *grumble.Context, detail bool) {
 		for _, node := range nodes {
 			c.App.Println("node id: ", node)
 			c.App.Println("data: ", blockchain.ReadData(node))
+			c.App.Println("------------------------------------------------------------------")
 		}
 	}
 }
 
-func vote(c *grumble.Context, id string, ticket int) {
-	err := blockchain.Vote(id, ticket)
-	if err != nil {
-		c.App.Println("vote error ", err.Error())
+// generate normal distribution data
+func generateNormalDistribution(mu float64, sigma float64, size int) []int64 {
+	dist := distuv.Normal{
+		Mu:    mu,    // Mean of the normal distribution
+		Sigma: sigma, // Standard deviation of the normal distribution
 	}
+
+	data := make([]int64, size)
+	for i := 0; i < size; i++ {
+
+		data[i] = int64(dist.Rand())
+
+	}
+
+	return data
 }
 
-func voteReset() {
-	blockchain.ResetVote()
+func randInt(min, max int) int {
+	return rand.New(rand.NewSource(time.Now().UnixNano())).Intn(max-min+1) + min
 }

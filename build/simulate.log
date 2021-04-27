@@ -1,0 +1,1910 @@
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:155: create 3 nodes
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:163: create node: 1
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:209: Create Node: port=3000, target=, seed=0
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:79: create node: QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:163: create node: 2
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:209: Create Node: port=3001, target=/ip4/127.0.0.1/tcp/3000/p2p/QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, seed=0
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:79: create node: QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:89: QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8 得到一个新的连接: QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:163: create node: 3
+2021/04/27 17:32:04  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:209: Create Node: port=3002, target=/ip4/127.0.0.1/tcp/3001/p2p/QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, seed=0
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:79: create node: QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:89: QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un 得到一个新的连接: QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:187: round: 1
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:190: ---------------------------------------------------------
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:191: Start block chain simulate with dpos consensus algorithm
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:192: init tocken normal distribution
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:201: compute vote weight
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:205: node id=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, tockens=111, vote weight=0.358065
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:205: node id=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, tockens=101, vote weight=0.325806
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:205: node id=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, tockens=98, vote weight=0.316129
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:208: init vote normal distribution and compute read vote data
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: node id=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, vote=30
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: node id=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, vote=29
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: node id=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, vote=31
+2021/04/27 17:32:05  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:07  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ }
+]
+2021/04/27 17:32:08  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un win and create new block******
+2021/04/27 17:32:08  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=63
+2021/04/27 17:32:08  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:08  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:09  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ }
+]
+2021/04/27 17:32:10  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un win and create new block******
+2021/04/27 17:32:10  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=30
+2021/04/27 17:32:10  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:10  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:10  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ }
+]
+2021/04/27 17:32:11  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un win and create new block******
+2021/04/27 17:32:11  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=97
+2021/04/27 17:32:11  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:11  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:11  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ }
+]
+2021/04/27 17:32:12  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un win and create new block******
+2021/04/27 17:32:12  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=82
+2021/04/27 17:32:12  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:12  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:12  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ }
+]
+2021/04/27 17:32:13  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un win and create new block******
+2021/04/27 17:32:13  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=70
+2021/04/27 17:32:13  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:13  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:13  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ }
+]
+2021/04/27 17:32:14  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un win and create new block******
+2021/04/27 17:32:14  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=28
+2021/04/27 17:32:14  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:14  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:14  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ }
+]
+2021/04/27 17:32:15  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un win and create new block******
+2021/04/27 17:32:15  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=40
+2021/04/27 17:32:15  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:15  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:15  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ }
+]
+2021/04/27 17:32:16  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8 win and create new block******
+2021/04/27 17:32:16  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=69
+2021/04/27 17:32:16  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:16  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:16  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ }
+]
+2021/04/27 17:32:17  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8 win and create new block******
+2021/04/27 17:32:17  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=35
+2021/04/27 17:32:17  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:17  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:17  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ }
+]
+2021/04/27 17:32:18  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un win and create new block******
+2021/04/27 17:32:18  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=57
+2021/04/27 17:32:18  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:18  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:250: End block chain simulate with dpos consensus algorithm
+2021/04/27 17:32:18  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:251: ---------------------------------------------------------
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:187: round: 2
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:190: ---------------------------------------------------------
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:191: Start block chain simulate with dpos consensus algorithm
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:192: init tocken normal distribution
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:201: compute vote weight
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:205: node id=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, tockens=86, vote weight=0.291525
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:205: node id=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, tockens=97, vote weight=0.328814
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:205: node id=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, tockens=112, vote weight=0.379661
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:208: init vote normal distribution and compute read vote data
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: node id=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, vote=30
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: node id=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, vote=38
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:218: node id=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, vote=40
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:20  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ }
+]
+2021/04/27 17:32:21  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:21  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=15
+2021/04/27 17:32:21  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:21  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:21  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ }
+]
+2021/04/27 17:32:22  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:22  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=24
+2021/04/27 17:32:22  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:22  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:22  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ },
+ {
+  "Index": 12,
+  "Timestamp": "2021-04-27 17:32:22.280700374 +0800 CST m=+23.063120312",
+  "BPM": 24,
+  "Hash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7",
+  "PrevHash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18"
+ }
+]
+2021/04/27 17:32:23  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:23  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=45
+2021/04/27 17:32:23  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:23  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:23  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ },
+ {
+  "Index": 12,
+  "Timestamp": "2021-04-27 17:32:22.280700374 +0800 CST m=+23.063120312",
+  "BPM": 24,
+  "Hash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7",
+  "PrevHash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18"
+ },
+ {
+  "Index": 13,
+  "Timestamp": "2021-04-27 17:32:23.291229604 +0800 CST m=+24.073649538",
+  "BPM": 45,
+  "Hash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc",
+  "PrevHash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7"
+ }
+]
+2021/04/27 17:32:24  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:24  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=31
+2021/04/27 17:32:24  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:24  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:24  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ },
+ {
+  "Index": 12,
+  "Timestamp": "2021-04-27 17:32:22.280700374 +0800 CST m=+23.063120312",
+  "BPM": 24,
+  "Hash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7",
+  "PrevHash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18"
+ },
+ {
+  "Index": 13,
+  "Timestamp": "2021-04-27 17:32:23.291229604 +0800 CST m=+24.073649538",
+  "BPM": 45,
+  "Hash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc",
+  "PrevHash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7"
+ },
+ {
+  "Index": 14,
+  "Timestamp": "2021-04-27 17:32:24.302880006 +0800 CST m=+25.085299939",
+  "BPM": 31,
+  "Hash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688",
+  "PrevHash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc"
+ }
+]
+2021/04/27 17:32:25  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:25  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=54
+2021/04/27 17:32:25  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:25  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:25  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ },
+ {
+  "Index": 12,
+  "Timestamp": "2021-04-27 17:32:22.280700374 +0800 CST m=+23.063120312",
+  "BPM": 24,
+  "Hash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7",
+  "PrevHash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18"
+ },
+ {
+  "Index": 13,
+  "Timestamp": "2021-04-27 17:32:23.291229604 +0800 CST m=+24.073649538",
+  "BPM": 45,
+  "Hash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc",
+  "PrevHash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7"
+ },
+ {
+  "Index": 14,
+  "Timestamp": "2021-04-27 17:32:24.302880006 +0800 CST m=+25.085299939",
+  "BPM": 31,
+  "Hash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688",
+  "PrevHash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc"
+ },
+ {
+  "Index": 15,
+  "Timestamp": "2021-04-27 17:32:25.310965781 +0800 CST m=+26.093385741",
+  "BPM": 54,
+  "Hash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82",
+  "PrevHash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688"
+ }
+]
+2021/04/27 17:32:26  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:26  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=45
+2021/04/27 17:32:26  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:26  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:26  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ },
+ {
+  "Index": 12,
+  "Timestamp": "2021-04-27 17:32:22.280700374 +0800 CST m=+23.063120312",
+  "BPM": 24,
+  "Hash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7",
+  "PrevHash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18"
+ },
+ {
+  "Index": 13,
+  "Timestamp": "2021-04-27 17:32:23.291229604 +0800 CST m=+24.073649538",
+  "BPM": 45,
+  "Hash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc",
+  "PrevHash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7"
+ },
+ {
+  "Index": 14,
+  "Timestamp": "2021-04-27 17:32:24.302880006 +0800 CST m=+25.085299939",
+  "BPM": 31,
+  "Hash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688",
+  "PrevHash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc"
+ },
+ {
+  "Index": 15,
+  "Timestamp": "2021-04-27 17:32:25.310965781 +0800 CST m=+26.093385741",
+  "BPM": 54,
+  "Hash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82",
+  "PrevHash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688"
+ },
+ {
+  "Index": 16,
+  "Timestamp": "2021-04-27 17:32:26.323646587 +0800 CST m=+27.106066521",
+  "BPM": 45,
+  "Hash": "bd253532ca2cef5e71879134544499136658156a41ac79afa70048d90983a297",
+  "PrevHash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82"
+ }
+]
+2021/04/27 17:32:27  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8 win and create new block******
+2021/04/27 17:32:27  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=69
+2021/04/27 17:32:27  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:27  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:27  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ },
+ {
+  "Index": 12,
+  "Timestamp": "2021-04-27 17:32:22.280700374 +0800 CST m=+23.063120312",
+  "BPM": 24,
+  "Hash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7",
+  "PrevHash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18"
+ },
+ {
+  "Index": 13,
+  "Timestamp": "2021-04-27 17:32:23.291229604 +0800 CST m=+24.073649538",
+  "BPM": 45,
+  "Hash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc",
+  "PrevHash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7"
+ },
+ {
+  "Index": 14,
+  "Timestamp": "2021-04-27 17:32:24.302880006 +0800 CST m=+25.085299939",
+  "BPM": 31,
+  "Hash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688",
+  "PrevHash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc"
+ },
+ {
+  "Index": 15,
+  "Timestamp": "2021-04-27 17:32:25.310965781 +0800 CST m=+26.093385741",
+  "BPM": 54,
+  "Hash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82",
+  "PrevHash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688"
+ },
+ {
+  "Index": 16,
+  "Timestamp": "2021-04-27 17:32:26.323646587 +0800 CST m=+27.106066521",
+  "BPM": 45,
+  "Hash": "bd253532ca2cef5e71879134544499136658156a41ac79afa70048d90983a297",
+  "PrevHash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82"
+ },
+ {
+  "Index": 17,
+  "Timestamp": "2021-04-27 17:32:27.331017839 +0800 CST m=+28.113437772",
+  "BPM": 69,
+  "Hash": "521838d8a39c2a42d59bafb921726e511f38d17f10b475c0a891dfc203be44b2",
+  "PrevHash": "bd253532ca2cef5e71879134544499136658156a41ac79afa70048d90983a297"
+ }
+]
+2021/04/27 17:32:28  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:28  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=50
+2021/04/27 17:32:28  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:28  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:28  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ },
+ {
+  "Index": 12,
+  "Timestamp": "2021-04-27 17:32:22.280700374 +0800 CST m=+23.063120312",
+  "BPM": 24,
+  "Hash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7",
+  "PrevHash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18"
+ },
+ {
+  "Index": 13,
+  "Timestamp": "2021-04-27 17:32:23.291229604 +0800 CST m=+24.073649538",
+  "BPM": 45,
+  "Hash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc",
+  "PrevHash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7"
+ },
+ {
+  "Index": 14,
+  "Timestamp": "2021-04-27 17:32:24.302880006 +0800 CST m=+25.085299939",
+  "BPM": 31,
+  "Hash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688",
+  "PrevHash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc"
+ },
+ {
+  "Index": 15,
+  "Timestamp": "2021-04-27 17:32:25.310965781 +0800 CST m=+26.093385741",
+  "BPM": 54,
+  "Hash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82",
+  "PrevHash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688"
+ },
+ {
+  "Index": 16,
+  "Timestamp": "2021-04-27 17:32:26.323646587 +0800 CST m=+27.106066521",
+  "BPM": 45,
+  "Hash": "bd253532ca2cef5e71879134544499136658156a41ac79afa70048d90983a297",
+  "PrevHash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82"
+ },
+ {
+  "Index": 17,
+  "Timestamp": "2021-04-27 17:32:27.331017839 +0800 CST m=+28.113437772",
+  "BPM": 69,
+  "Hash": "521838d8a39c2a42d59bafb921726e511f38d17f10b475c0a891dfc203be44b2",
+  "PrevHash": "bd253532ca2cef5e71879134544499136658156a41ac79afa70048d90983a297"
+ },
+ {
+  "Index": 18,
+  "Timestamp": "2021-04-27 17:32:28.344944811 +0800 CST m=+29.127364747",
+  "BPM": 50,
+  "Hash": "39eb98b81684333065fc8f36aedcecdf3d8aa047a549b49160d7e7f1792218f2",
+  "PrevHash": "521838d8a39c2a42d59bafb921726e511f38d17f10b475c0a891dfc203be44b2"
+ }
+]
+2021/04/27 17:32:29  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:29  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmPz38a1z1x5PatDhP4h4eggkvnksxw4yoMSshoD3gv3Un, data=46
+2021/04/27 17:32:29  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:29  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:225: *****************************************************
+2021/04/27 17:32:29  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:230: read node=QmYQL8gPBd6rdqXBVG3SVXCSQaHW9KFxxPrT74TpT8Mge8, data=[
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.724254429 +0800 CST m=+5.506674355",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.82775096 +0800 CST m=+5.610170816",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 0,
+  "Timestamp": "2021-04-27 17:32:04.935476393 +0800 CST m=+5.717896249",
+  "BPM": 0,
+  "Hash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+  "PrevHash": ""
+ },
+ {
+  "Index": 1,
+  "Timestamp": "2021-04-27 17:32:08.213859173 +0800 CST m=+8.996279107",
+  "BPM": 63,
+  "Hash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8",
+  "PrevHash": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+ },
+ {
+  "Index": 2,
+  "Timestamp": "2021-04-27 17:32:10.214994384 +0800 CST m=+10.997414321",
+  "BPM": 30,
+  "Hash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd",
+  "PrevHash": "681489341d01779cdec76647ec1d19afab3c147318494ff538f6cc6a1c428ae8"
+ },
+ {
+  "Index": 3,
+  "Timestamp": "2021-04-27 17:32:11.219394424 +0800 CST m=+12.001814364",
+  "BPM": 97,
+  "Hash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb",
+  "PrevHash": "f88693133ec5412998d8bd4f64992701cacf0775e017d9687a52d9138b14b9bd"
+ },
+ {
+  "Index": 4,
+  "Timestamp": "2021-04-27 17:32:12.224239968 +0800 CST m=+13.006659905",
+  "BPM": 82,
+  "Hash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5",
+  "PrevHash": "aa08417c5c702db3b7c4bce6ca694209536b490162e8b2a6741917a1b28740bb"
+ },
+ {
+  "Index": 5,
+  "Timestamp": "2021-04-27 17:32:13.229532666 +0800 CST m=+14.011952602",
+  "BPM": 70,
+  "Hash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46",
+  "PrevHash": "255ab0592649f8d37e6ebfcdfb127f14b6378d58a2db201ad5340412e17950b5"
+ },
+ {
+  "Index": 6,
+  "Timestamp": "2021-04-27 17:32:14.235622718 +0800 CST m=+15.018042657",
+  "BPM": 28,
+  "Hash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0",
+  "PrevHash": "efe2958d77d07ada67cc07745a1b71356e4ec61f8fb99acd40b8d9deff8a4a46"
+ },
+ {
+  "Index": 7,
+  "Timestamp": "2021-04-27 17:32:15.242423674 +0800 CST m=+16.024843610",
+  "BPM": 40,
+  "Hash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b",
+  "PrevHash": "22df02aa8b257996daeb8c4ef5e9dbf0bcae919fcbcd1177697412ea43f86ca0"
+ },
+ {
+  "Index": 8,
+  "Timestamp": "2021-04-27 17:32:16.248746327 +0800 CST m=+17.031166260",
+  "BPM": 69,
+  "Hash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce",
+  "PrevHash": "12f35e07ee81f3b063957ca7843174ae0cbbc28af13138ec7ee060f0f6fe3c9b"
+ },
+ {
+  "Index": 9,
+  "Timestamp": "2021-04-27 17:32:17.254831939 +0800 CST m=+18.037251867",
+  "BPM": 35,
+  "Hash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce",
+  "PrevHash": "140078f5d8f21ef3a62f3e39958d7c51116e7818643676c1d3e65a20cb13c5ce"
+ },
+ {
+  "Index": 10,
+  "Timestamp": "2021-04-27 17:32:18.263360992 +0800 CST m=+19.045780891",
+  "BPM": 57,
+  "Hash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b",
+  "PrevHash": "cd09f38023c9d5aad7830795097f257f997ac32e056828a42be8c56df7e394ce"
+ },
+ {
+  "Index": 11,
+  "Timestamp": "2021-04-27 17:32:21.270635868 +0800 CST m=+22.053055804",
+  "BPM": 15,
+  "Hash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18",
+  "PrevHash": "fb56f4f0fc740f24b872092cb94d75d4e06734e40334445c1fe648c708220b9b"
+ },
+ {
+  "Index": 12,
+  "Timestamp": "2021-04-27 17:32:22.280700374 +0800 CST m=+23.063120312",
+  "BPM": 24,
+  "Hash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7",
+  "PrevHash": "bebf799ca3ff84faf3acf7e15ce0cd487a8e4acffbcd5322110a59d89957fe18"
+ },
+ {
+  "Index": 13,
+  "Timestamp": "2021-04-27 17:32:23.291229604 +0800 CST m=+24.073649538",
+  "BPM": 45,
+  "Hash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc",
+  "PrevHash": "9b6f3d13b2ae689c65d2aa96dba300fe1afedc1a85c6dabcbd16c4d5a5dd99c7"
+ },
+ {
+  "Index": 14,
+  "Timestamp": "2021-04-27 17:32:24.302880006 +0800 CST m=+25.085299939",
+  "BPM": 31,
+  "Hash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688",
+  "PrevHash": "175f980de89fd282703db182cec9dea85008777557f6c2631ea281cf7deab1cc"
+ },
+ {
+  "Index": 15,
+  "Timestamp": "2021-04-27 17:32:25.310965781 +0800 CST m=+26.093385741",
+  "BPM": 54,
+  "Hash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82",
+  "PrevHash": "433969132277901365d92555dc4d3f1d8668f648f8f6eb9c0085b33d7c50b688"
+ },
+ {
+  "Index": 16,
+  "Timestamp": "2021-04-27 17:32:26.323646587 +0800 CST m=+27.106066521",
+  "BPM": 45,
+  "Hash": "bd253532ca2cef5e71879134544499136658156a41ac79afa70048d90983a297",
+  "PrevHash": "77e5a425302dd65e5a54dd349477b8cdfbda7b264aa7131dec0d51c77d609a82"
+ },
+ {
+  "Index": 17,
+  "Timestamp": "2021-04-27 17:32:27.331017839 +0800 CST m=+28.113437772",
+  "BPM": 69,
+  "Hash": "521838d8a39c2a42d59bafb921726e511f38d17f10b475c0a891dfc203be44b2",
+  "PrevHash": "bd253532ca2cef5e71879134544499136658156a41ac79afa70048d90983a297"
+ },
+ {
+  "Index": 18,
+  "Timestamp": "2021-04-27 17:32:28.344944811 +0800 CST m=+29.127364747",
+  "BPM": 50,
+  "Hash": "39eb98b81684333065fc8f36aedcecdf3d8aa047a549b49160d7e7f1792218f2",
+  "PrevHash": "521838d8a39c2a42d59bafb921726e511f38d17f10b475c0a891dfc203be44b2"
+ },
+ {
+  "Index": 19,
+  "Timestamp": "2021-04-27 17:32:29.359277716 +0800 CST m=+30.141697579",
+  "BPM": 46,
+  "Hash": "ac4f38e7082bfa38737171fae7e36d85a8ccab575924b69ab4124f1b3c9d2603",
+  "PrevHash": "39eb98b81684333065fc8f36aedcecdf3d8aa047a549b49160d7e7f1792218f2"
+ }
+]
+2021/04/27 17:32:30  INFO /home/hui/Projects/BlockChain/blockchain-sim/blockchain/p2p.go:164: ******node QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps win and create new block******
+2021/04/27 17:32:30  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:238: write by node=QmVY4hfYKhhc5sYGTuGv49fwMYtveMXNrJyiFzyuC6Fwps, data=19
+2021/04/27 17:32:30  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:246: *****************************************************
+2021/04/27 17:32:30  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:250: End block chain simulate with dpos consensus algorithm
+2021/04/27 17:32:30  INFO /home/hui/Projects/BlockChain/blockchain-sim/cmd/cli.go:251: ---------------------------------------------------------

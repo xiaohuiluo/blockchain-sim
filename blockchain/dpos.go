@@ -4,8 +4,15 @@ import (
 	"sort"
 )
 
-// BPCount 区块生产者的数量
-const BPCount = 5
+var nodeVoteMap = make(map[string]int)
+
+func NodeVoteMap() map[string]int {
+	return nodeVoteMap
+}
+
+func Vote(id string, ticket int) {
+	nodeVoteMap[id] = ticket
+}
 
 // PickWinner 根据投票数量选择生成区块的节点
 func PickWinner() (bp string) {
@@ -20,9 +27,8 @@ func PickWinner() (bp string) {
 		return ticketList[i] > ticketList[j]
 	})
 
-	if len(ticketList) > BPCount {
-		ticketList = ticketList[0:BPCount] // 选择前面的5个节点作为Block producer
-	}
+	// 前一半作为producer
+	ticketList = ticketList[0 : len(ticketList)/2]
 
 	for k, v := range voteMap {
 		if v > ticketList[len(ticketList)-1] {

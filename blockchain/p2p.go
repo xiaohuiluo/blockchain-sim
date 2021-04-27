@@ -85,8 +85,9 @@ func MakeBasicHost(listenPort int, secio bool, randseed int64) (host.Host, strin
 func HandleStream(s network.Stream) {
 	localPeer := s.Conn().LocalPeer().Pretty()
 	remotePeer := s.Conn().RemotePeer().Pretty()
-
-	log.Infof("%s 得到一个新的连接: %s", localPeer, remotePeer)
+	log.Infof("%s", localPeer)
+	log.Infof("%s", remotePeer)
+	log.Infof("%s accept a connection from : %s", localPeer, remotePeer)
 	// 将连接加入到
 	rw := bufio.NewReadWriter(bufio.NewReader(s), bufio.NewWriter(s))
 	if nodeRWMap[remotePeer] == nil {
@@ -217,32 +218,36 @@ func CreateNode(port int, target string, seed int64) (string, string, error) {
 	currentFullAddr := ""
 
 	if port == 0 {
-		log.Fatal("请提供一个端口号")
+		log.Fatal("please give a port for create node")
 	}
 	// 构造一个host 监听地址
 	ha, currentAddr, currentFullAddr, err := MakeBasicHost(port, false, seed)
 
 	if err != nil {
+		log.Errorf("make basic host error=%s", err.Error())
 		return currentAddr, currentFullAddr, err
 	}
 
 	if target == "" {
-		log.Debug("等待节点连接...")
+		log.Debug("waiting for connect")
 		ha.SetStreamHandler("/p2p/1.0.0", HandleStream)
 		return currentAddr, currentFullAddr, err
 	} else {
 		ha.SetStreamHandler("/p2p/1.0.0", HandleStream)
 		ipfsaddr, err := ma.NewMultiaddr(target)
 		if err != nil {
+			log.Errorf("new multiaddr error=%s", err.Error())
 			return currentAddr, currentFullAddr, err
 		}
 		pid, err := ipfsaddr.ValueForProtocol(ma.P_IPFS)
 		if err != nil {
+			log.Errorf("get value for protocol error=%s", err.Error())
 			return currentAddr, currentFullAddr, err
 		}
 
 		peerid, err := peer.IDB58Decode(pid)
 		if err != nil {
+			log.Errorf("idb58 decode error=%s", err.Error())
 			return currentAddr, currentFullAddr, err
 		}
 
@@ -257,6 +262,7 @@ func CreateNode(port int, target string, seed int64) (string, string, error) {
 		// 使用了相同的/p2p/1.0.0 协议
 		s, err := ha.NewStream(context.Background(), peerid, "/p2p/1.0.0")
 		if err != nil {
+			log.Errorf("failed new stream to target %s, error=%s", targetAddr, err.Error())
 			return currentAddr, currentFullAddr, err
 		}
 

@@ -167,14 +167,14 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 			if err != nil {
 				log.Errorf("failed to create node: %d, error is %s", node, err)
 				c.App.Println("failed to create node: ", addr)
-				break
+				return
 			}
 		} else {
 			addr, fullAddr, err = blockchain.CreateNode(port, fullAddr, seed)
 			if err != nil {
 				log.Errorf("failed to create node: %d, error is %s", node, err)
 				c.App.Println("failed to create node: ", addr)
-				break
+				return
 			}
 		}
 

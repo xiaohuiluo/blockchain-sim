@@ -27,8 +27,6 @@ import (
 
 var mutex = &sync.Mutex{}
 
-var consensus string
-
 // node rw map
 var nodeRWMap map[string]*bufio.ReadWriter
 
@@ -111,10 +109,6 @@ func HandleStream(s network.Stream) {
 
 	// 启动同步数据协程
 	go syncData(rw)
-}
-
-func SetConsensus(cons string) {
-	consensus = cons
 }
 
 func GetNodes() []string {

@@ -1,6 +1,7 @@
 package blockchain
 
 import (
+	"errors"
 	"sort"
 )
 
@@ -19,11 +20,16 @@ func Vote(id string, ticket int) {
 }
 
 // PickWinner 根据投票数量选择生成区块的节点
-func PickWinner() (bp string) {
+func PickWinnerWithDpos() (bp string, err error) {
+
+	if len(nodeVoteMap) < 1 {
+		err = errors.New("Error: failed to pick winner, node vote map is empty")
+		return
+	}
+
 	// 选择BlockProducer
-	voteMap := NodeVoteMap()
-	ticketList := make([]int, len(voteMap))
-	for _, ticket := range voteMap {
+	ticketList := make([]int, len(nodeVoteMap))
+	for _, ticket := range nodeVoteMap {
 		ticketList = append(ticketList, ticket)
 	}
 
@@ -34,9 +40,10 @@ func PickWinner() (bp string) {
 	// 前一半作为producer
 	ticketList = ticketList[0 : len(ticketList)/2]
 
-	for k, v := range voteMap {
+	for k, v := range nodeVoteMap {
 		if v > ticketList[len(ticketList)-1] {
 			bp = k
+			err = nil
 		}
 	}
 

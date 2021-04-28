@@ -4,7 +4,11 @@ import (
 	"sort"
 )
 
-var nodeVoteMap = make(map[string]int)
+var nodeVoteMap map[string]int
+
+func InitVoteMap() {
+	nodeVoteMap = make(map[string]int)
+}
 
 func NodeVoteMap() map[string]int {
 	return nodeVoteMap

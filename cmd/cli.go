@@ -100,7 +100,6 @@ func init() {
 			f.Duration("t", "timeout", time.Second, "timeout duration")
 		},
 		Args: func(a *grumble.Args) {
-			a.String("id", "id of blockchain node")
 			a.Int("data", "data you want to write to blockchain")
 		},
 		Run: func(c *grumble.Context) error {
@@ -108,14 +107,16 @@ func init() {
 			setLogLevel(logLevel)
 
 			// write blockchain from a node
-			id := c.Args.String("id")
 			data := c.Args.Int("data")
-
-			rtl, err := blockchain.WriteData(id, data)
+			// pick win write new block node
+			winNodeId := blockchain.PickWinner()
+			c.App.Println("*****write new block win node=", winNodeId)
+			log.Infof("******node=%s win and create new block******", winNodeId)
+			rtl, err := blockchain.WriteData(winNodeId, data)
 			if rtl {
-				c.App.Println("success write data = ", data, " to node id:", id)
+				c.App.Println("success write data = ", data, " to blockchain")
 			} else {
-				c.App.Println("failed write data = ", data, " to node id:", id, " error is", err)
+				c.App.Println("failed write data = ", data, " to blockchain, error is", err)
 			}
 
 			return nil
@@ -142,6 +143,11 @@ func setLogLevel(logLevel string) {
 	}
 }
 
+func Init() {
+	log.Info("clean previous simulate and init current resource")
+	blockchain.InitNodeResource()
+}
+
 func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 
 	if nodes < 1 {
@@ -151,6 +157,8 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 	if rounds < 1 {
 		log.Errorf("the min of rounds is 1")
 	}
+
+	Init()
 
 	log.Infof("create %d nodes", nodes)
 	port := 3000
@@ -163,16 +171,45 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 		log.Infof("create node: %d", node)
 
 		if node == 1 {
-			addr, fullAddr, err = blockchain.CreateNode(port, "", seed)
-			if err != nil {
-				log.Errorf("failed to create node: %d, error is %s", node, err)
+
+			num := 0
+
+			for num < 3 {
+				addr, fullAddr, err = blockchain.CreateNode(port, "", seed)
+
+				if err != nil {
+					log.Errorf("failed to create node: %d, error is %s", node, err)
+					time.Sleep(time.Duration(2) * time.Second)
+					num++
+					port++
+				} else {
+					break
+				}
+			}
+
+			if num == 3 {
+				log.Errorf("failed to create first block chain node: %d", node)
 				c.App.Println("failed to create node: ", addr)
 				return
 			}
+
 		} else {
-			addr, fullAddr, err = blockchain.CreateNode(port, fullAddr, seed)
-			if err != nil {
-				log.Errorf("failed to create node: %d, error is %s", node, err)
+
+			num := 0
+
+			for num < 3 {
+				addr, fullAddr, err = blockchain.CreateNode(port, fullAddr, seed)
+				if err != nil {
+					log.Errorf("failed to create node: %d, error is %s", node, err)
+					time.Sleep(time.Duration(2) * time.Second)
+					num++
+					port++
+				} else {
+					break
+				}
+			}
+			if num == 3 {
+				log.Errorf("failed to create node: %d", node)
 				c.App.Println("failed to create node: ", addr)
 				return
 			}
@@ -191,6 +228,7 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 			log.Info("Start block chain simulate with dpos consensus algorithm")
 			log.Info("init tocken normal distribution")
 
+			c.App.Println("***** start round=", round, " random read and write to block chain *****")
 			nodeIds := blockchain.GetNodes()
 			tockensData := generateNormalDistribution(100, 20, nodes)
 			var sum int64
@@ -213,9 +251,12 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 			}
 
 			// init real node vote data
+			// simple to only vote to themself
+			blockchain.InitVoteMap()
 			for i, nodeId := range nodeIds {
 				blockchain.Vote(nodeId, voteData[i])
 				log.Infof("node id=%s, vote=%d", nodeId, voteData[i])
+				c.App.Println("node id=", nodeId, " vote tickets=", voteData[i])
 			}
 
 			c.App.Println("start random read and write to block chain")
@@ -232,14 +273,17 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 				time.Sleep(time.Duration(1) * time.Second)
 				// new block chain
 				randData := randInt(10, 100)
-				randNodeId = nodeIds[randInt(0, len(nodeIds)-1)]
-				rlt, err := blockchain.WriteData(randNodeId, randData)
+				// pick win write new block node
+				winNodeId := blockchain.PickWinner()
+				c.App.Println("*****write new block win node=", winNodeId)
+				log.Infof("******node=%s win and create new block******", winNodeId)
+				rlt, err := blockchain.WriteData(winNodeId, randData)
 				if rlt {
-					log.Infof("write by node=%s, data=%d", randNodeId, randData)
-					c.App.Println("write success from node=", randNodeId, ", data=", randData)
+					log.Infof("write new block by node=%s, data=%d", winNodeId, randData)
+					c.App.Println("write success from node=", winNodeId, ", data=", randData)
 				} else {
-					log.Infof("write error by node=%s, data=%s, error=%s", randNodeId, randData, err.Error())
-					c.App.Println("write failed from node=", randNodeId, ", data=", randData, ", error=", err.Error())
+					log.Infof("write new block error by node=%s, data=%s, error=%s", winNodeId, randData, err.Error())
+					c.App.Println("write failed from node=", winNodeId, ", data=", randData, ", error=", err.Error())
 				}
 
 				it++
@@ -247,6 +291,7 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 			}
 
 			c.App.Println("end random read and write to block chain")
+			c.App.Println("***** end round=", round, " random read and write to block chain *****")
 			log.Info("End block chain simulate with dpos consensus algorithm")
 			log.Info("---------------------------------------------------------")
 		case "pos":

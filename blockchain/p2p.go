@@ -15,7 +15,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
 	log "github.com/go-fastlog/fastlog"
 	"github.com/libp2p/go-libp2p"
 	"github.com/libp2p/go-libp2p-core/crypto"
@@ -31,7 +30,22 @@ var mutex = &sync.Mutex{}
 var consensus string
 
 // node rw map
-var nodeRWMap = make(map[string]*bufio.ReadWriter)
+var nodeRWMap map[string]*bufio.ReadWriter
+
+// node stream map
+var nodeStreamMap map[string]network.Stream
+
+// node host map
+var nodeHostMap map[string]host.Host
+
+func InitNodeResource() {
+	closeAllNodeHost()
+
+	BlockChain = []Block{}
+	nodeRWMap = make(map[string]*bufio.ReadWriter)
+	nodeStreamMap = make(map[string]network.Stream)
+	nodeHostMap = make(map[string]host.Host)
+}
 
 // MakeBasicHost 构建P2P网络
 func MakeBasicHost(listenPort int, secio bool, randseed int64) (host.Host, string, string, error) {
@@ -92,6 +106,7 @@ func HandleStream(s network.Stream) {
 	rw := bufio.NewReadWriter(bufio.NewReader(s), bufio.NewWriter(s))
 	if nodeRWMap[remotePeer] == nil {
 		nodeRWMap[remotePeer] = rw
+		nodeStreamMap[remotePeer] = s
 	}
 
 	// 启动同步数据协程
@@ -153,16 +168,13 @@ func ReadData(id string) string {
 
 }
 
-func WriteData(id string, data int) (bool, error) {
-	rw := nodeRWMap[id]
+func WriteData(address string, data int) (bool, error) {
+	rw := nodeRWMap[address]
 	if rw == nil {
-		log.Errorf("node id = %s is not exist", id)
-		return false, errors.New("Error: node id = " + id + " is not exist")
+		log.Errorf("node id = %s is not exist", address)
+		return false, errors.New("Error: node id = " + address + " is not exist")
 	}
 
-	// pick选择block生产者
-	address := PickWinner()
-	log.Infof("******node %s win and create new block******", address)
 	lastBlock := BlockChain[len(BlockChain)-1]
 	newBlock, err := GenerateBlock(lastBlock, data, address)
 	if err != nil {
@@ -175,7 +187,7 @@ func WriteData(id string, data int) (bool, error) {
 		mutex.Unlock()
 	}
 
-	spew.Dump(BlockChain)
+	// spew.Dump(BlockChain)
 
 	bytes, err := json.Marshal(BlockChain)
 	if err != nil {
@@ -223,6 +235,8 @@ func CreateNode(port int, target string, seed int64) (string, string, error) {
 	// 构造一个host 监听地址
 	ha, currentAddr, currentFullAddr, err := MakeBasicHost(port, false, seed)
 
+	nodeHostMap[currentAddr] = ha
+
 	if err != nil {
 		log.Errorf("make basic host error=%s", err.Error())
 		return currentAddr, currentFullAddr, err
@@ -268,10 +282,21 @@ func CreateNode(port int, target string, seed int64) (string, string, error) {
 
 		rw := bufio.NewReadWriter(bufio.NewReader(s), bufio.NewWriter(s))
 
-		nodeRWMap[s.Conn().RemotePeer().Pretty()] = rw
+		remotePeer := s.Conn().RemotePeer().Pretty()
+		nodeRWMap[remotePeer] = rw
+		nodeStreamMap[remotePeer] = s
 
 		go syncData(rw)
 
 		return currentAddr, currentFullAddr, err
+	}
+}
+
+func closeAllNodeHost() {
+	for nodeId, host := range nodeHostMap {
+		err := host.Close()
+		if err != nil {
+			log.Errorf("failed to close %s host, maybe it is closed", nodeId)
+		}
 	}
 }

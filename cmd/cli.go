@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"errors"
 	"math"
 	"math/rand"
 	"time"
@@ -65,65 +66,8 @@ func init() {
 		},
 	}
 
-	// readCmd := &grumble.Command{
-	// 	Name:    "read",
-	// 	Help:    "read blockchain from a node",
-	// 	Aliases: []string{"run"},
-	// 	Flags: func(f *grumble.Flags) {
-	// 		f.Duration("t", "timeout", time.Second, "timeout duration")
-	// 	},
-	// 	Args: func(a *grumble.Args) {
-	// 		a.String("id", "id of blockchain node")
-	// 	},
-	// 	Run: func(c *grumble.Context) error {
-	// 		logLevel := c.Flags.String("log_level")
-	// 		setLogLevel(logLevel)
-
-	// 		// read blockchain from a node
-	// 		id := c.Args.String("id")
-
-	// 		data := blockchain.ReadData(id)
-	// 		c.App.Println("node id:", id)
-	// 		c.App.Println("data:", data)
-	// 		return nil
-	// 	},
-	// }
-
-	// writeCmd := &grumble.Command{
-	// 	Name:    "write",
-	// 	Help:    "write data to blockchain by a node",
-	// 	Aliases: []string{"run"},
-	// 	Flags: func(f *grumble.Flags) {
-	// 		f.Duration("t", "timeout", time.Second, "timeout duration")
-	// 	},
-	// 	Args: func(a *grumble.Args) {
-	// 		a.Int("data", "data you want to write to blockchain")
-	// 	},
-	// 	Run: func(c *grumble.Context) error {
-	// 		logLevel := c.Flags.String("log_level")
-	// 		setLogLevel(logLevel)
-
-	// 		// write blockchain from a node
-	// 		data := c.Args.Int("data")
-	// 		// pick win write new block node
-	// 		winNodeId := blockchain.PickWinnerWithDpos()
-	// 		c.App.Println("*****write new block win node=", winNodeId)
-	// 		log.Infof("******node=%s win and create new block******", winNodeId)
-	// 		rtl, err := blockchain.WriteData(winNodeId, data)
-	// 		if rtl {
-	// 			c.App.Println("success write data = ", data, " to blockchain")
-	// 		} else {
-	// 			c.App.Println("failed write data = ", data, " to blockchain, error is", err)
-	// 		}
-
-	// 		return nil
-	// 	},
-	// }
-
 	Cli.AddCommand(simCmd)
 	Cli.AddCommand(showCmd)
-	// Cli.AddCommand(readCmd)
-	// Cli.AddCommand(writeCmd)
 }
 
 func setLogLevel(logLevel string) {
@@ -151,7 +95,9 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 	}
 
 	// create nodes
-	createBlockChainNodes(c, nodes, rounds)
+	if nil != createBlockChainNodes(c, nodes, rounds) {
+		return
+	}
 
 	// run simulate
 	for round := 1; round <= rounds; round++ {
@@ -172,7 +118,7 @@ func simulate(c *grumble.Context, consensus string, nodes int, rounds int) {
 
 }
 
-func createBlockChainNodes(c *grumble.Context, nodes int, round int) {
+func createBlockChainNodes(c *grumble.Context, nodes int, round int) error {
 	log.Info("clean previous simulate and init current simulate resource")
 	blockchain.InitNodeResource()
 	log.Infof("create %d nodes", nodes)
@@ -205,7 +151,7 @@ func createBlockChainNodes(c *grumble.Context, nodes int, round int) {
 			if num == 3 {
 				log.Errorf("failed to create first block chain node: %d", node)
 				c.App.Println("failed to create node: ", addr)
-				return
+				return errors.New("failed to create node: " + addr)
 			}
 
 		} else {
@@ -226,7 +172,7 @@ func createBlockChainNodes(c *grumble.Context, nodes int, round int) {
 			if num == 3 {
 				log.Errorf("failed to create node: %d", node)
 				c.App.Println("failed to create node: ", addr)
-				return
+				return errors.New("failed to create node: " + addr)
 			}
 		}
 
@@ -234,6 +180,8 @@ func createBlockChainNodes(c *grumble.Context, nodes int, round int) {
 
 		port++
 	}
+
+	return nil
 }
 
 // run with dpos consensus algorithm
